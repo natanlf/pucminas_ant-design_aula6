@@ -6,9 +6,13 @@ import {
   TeamOutlined,
   UserOutlined
 } from "@ant-design/icons";
-import { Breadcrumb, Layout, Menu, theme } from "antd";
+import { Breadcrumb, Layout, Menu, theme, Typography, Card } from "antd";
 import { useState } from "react";
+
+let { Title } = Typography;
+
 const { Header, Content, Footer, Sider } = Layout;
+
 function getItem(label, key, icon, children) {
   return {
     key,
@@ -17,6 +21,7 @@ function getItem(label, key, icon, children) {
     label
   };
 }
+
 const items = [
   getItem("Option 1", "1", <PieChartOutlined />),
   getItem("Option 2", "2", <DesktopOutlined />),
@@ -31,6 +36,7 @@ const items = [
   ]),
   getItem("Files", "9", <FileOutlined />)
 ];
+
 const App = () => {
   const [collapsed, setCollapsed] = useState(false);
   const {
@@ -88,7 +94,15 @@ const App = () => {
               background: colorBgContainer
             }}
           >
-            Bill is a cat.
+            <Title>
+              Dashboard
+            </Title>
+            <div style={{display: "flex", justifyContent: "space-between"}}>
+              <Card style={{flex: 1, height: "300px"}}>Cool</Card>
+              <Card style={{flex: 1, height: "300px"}}>Cool</Card>
+              <Card style={{flex: 1, height: "300px"}}>Cool</Card>
+              <Card style={{flex: 1, height: "300px"}}>Cool</Card>
+            </div>
           </div>
         </Content>
         <Footer
